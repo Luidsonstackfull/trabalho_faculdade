@@ -47,32 +47,16 @@ public class CartaoDeSaude {
 
     public void deletarPaciente(Funcionario funcionario, CartaoDeSaude cartaoDeSaude){
 
-        Iterator<Map.Entry<Funcionario, CartaoDeSaude>> iterator = cartaoDeSaudeMap.entrySet().iterator();
-        boolean found = false;
-
-        while (iterator.hasNext()) {
-            Map.Entry<Funcionario, CartaoDeSaude> entry = iterator.next();
-            if (entry.getKey().equals(funcionario) && entry.getValue().equals(cartaoDeSaude)) {
-                iterator.remove();
-                found = true;
-                break;
-            }
-        }
-
-        if (found) {
-            System.out.println("Funcionario nao possui mais o cartao de acesso");
+        if (cartaoDeSaudeMap.remove(funcionario) != null) {
+            System.out.println("Funcionário não possui mais o cartão de acesso");
         } else {
-            System.out.println("Funcionario nao encontrado ou cartao de saude nao corresponde");
+            System.out.println("Funcionário não encontrado ou cartão de saúde não corresponde");
         }
     }
     public CartaoDeSaude buscarPaciente(Funcionario funcionario,CartaoDeSaude cartaoDeSaude) {
 
-        for (Map.Entry<Funcionario, CartaoDeSaude> entry : cartaoDeSaudeMap.entrySet()) {
-            if (entry.getKey().equals(funcionario) && entry.getValue().equals(cartaoDeSaudeMap)) {
-                return entry.getValue();
-            }
-        }
-        return null;
+            return cartaoDeSaudeMap.get(funcionario);
+
     }
     public String descreverSituacao(String situacao){
         return situacao;

@@ -46,8 +46,9 @@ public class teste {
 
         cartaoDeSaude3.cadastrarPaciente(funcionario2,cartaoDeSaude3);
         cartaoDeSaude2.cadastrarPaciente(funcionario1,cartaoDeSaude2);
+
         cartaoDeSaude2.deletarPaciente(funcionario1,cartaoDeSaude2);
-        cartaoDeSaude2.buscarPaciente(funcionario1,cartaoDeSaude2);
+        cartaoDeSaude2.buscarPaciente(funcionario2,cartaoDeSaude3);
 
 
 
